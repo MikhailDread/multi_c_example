@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>В определенном возрасте</title>
+    <style>
+        table {
+            width: 50%;
+            /* Ширина таблицы */
+            background: white;
+            /* Цвет фона таблицы */
+            color: black;
+            /* Цвет текста */
+            border-spacing: 1px;
+            /* Расстояние между ячейками */
+        }
+
+        td,
+        th {
+            background: white;
+            /* Цвет фона ячеек */
+            padding: 5px;
+            /* Поля вокруг текста */
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Чаще всего покупают люди в возрасте 18 лет</h1>
+
+<table border="1" class="interesting">
+    <tr>
+        <th class="product" th:text="${item}"></th>
+    </tr>
+</table>
+
+<div class="row-block">
+    <ul class="footer-menu">
+        <li class="menu-item"><a class="menu-link" href="/best.html" th:href="@{/top-purchaser}">Человек-покупка</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/top.html" th:href="@{/top-item}">Топ-продукт</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/week.html" th:href="@{/last-week}">За неделю</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+
+</html>

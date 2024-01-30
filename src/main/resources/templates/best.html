@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Лучший покупатель</title>
+    <style>
+        table {
+            width: 50%;
+            /* Ширина таблицы */
+            background: white;
+            /* Цвет фона таблицы */
+            color: black;
+            /* Цвет текста */
+            border-spacing: 1px;
+            /* Расстояние между ячейками */
+        }
+
+        td,
+        th {
+            background: white;
+            /* Цвет фона ячеек */
+            padding: 5px;
+            /* Поля вокруг текста */
+        }
+    </style>
+</head>
+
+<body class="best-human">
+
+<h1>Человек, совершивший больше всего покупок за полгода</h1>
+
+<table border="1" class="human">
+    <tr>
+        <th class="most-buyer" th:text="${user}"></th>
+    </tr>
+</table>
+
+
+<div class="row-block">
+    <ul class="footer-menu">
+        <li class="menu-item"><a class="menu-link" href="/top.html" th:href="@{/top-item}">Топ-продукт</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/week.html" th:href="@{/last-week}">За неделю</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/interesting.html" th:href="@{/interesting-item}">Интересный
+            товар</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+
+</html>

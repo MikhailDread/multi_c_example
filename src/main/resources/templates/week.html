@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Недельные покупки</title>
+    <style>
+        table {
+            width: 50%;
+            /* Ширина таблицы */
+            background: white;
+            /* Цвет фона таблицы */
+            color: black;
+            /* Цвет текста */
+            border-spacing: 1px;
+            /* Расстояние между ячейками */
+        }
+
+        td,
+        th {
+            background: white;
+            /* Цвет фона ячеек */
+            padding: 5px;
+            /* Поля вокруг текста */
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Список покупок за последнюю неделю</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th> Таблица покупок за последнюю неделю</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${purchases.empty}">
+        <td colspan="2"> За последнюю неделю не было покупок</td>
+    </tr>
+    <tr th:each="purchase : ${purchases}">
+        <td><span th:text="${purchase.name}"></span></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="row-block">
+    <ul class="footer-menu">
+        <li class="menu-item"><a class="menu-link" href="/best.html"
+                                 th:href="@{/top-purchaser}">Человек-покупка</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/top.html" th:href="@{/top-item}">Топ-продукт</a>
+        </li>
+        <li class="menu-item"><a class="menu-link" href="/interesting.html" th:href="@{/interesting-item}">Интересный
+            товар</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+
+</html>

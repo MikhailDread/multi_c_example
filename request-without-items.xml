@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <id>18</id>
+    <name>Дмитрий</name>
+    <lastname>Иванов</lastname>
+    <age>18</age>
+    <amount>22400.00</amount>
+    <count>1</count>
+    <purchase_date>2022-01-28</purchase_date>
+</user>

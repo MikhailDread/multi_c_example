@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Validator;
@@ -39,7 +38,7 @@ public class PurchaseItemController {
 
     @PostMapping("/purchase")
     @ApiOperation("Обработать входящий xml-документ операций по товарам")
-    public ResponseEntity purchaseItem(@RequestBody String xmlPurchaseInfo) throws IOException, JAXBException {
+    public ResponseEntity<String> purchaseItem(@RequestBody String xmlPurchaseInfo) throws IOException {
         Source source = new StreamSource(new StringReader(xmlPurchaseInfo));
         try {
             validator.validate(source);
@@ -50,9 +49,16 @@ public class PurchaseItemController {
                     .body("Некорректный xml-документ, просьба прикрепить действующий!");
         }
 
-        userService.saveUserPurchase(MarshallerUtil.unmarshalToUser(xmlPurchaseInfo));
+        try {
+            userService.saveUserPurchase(MarshallerUtil.unmarshalToUser(xmlPurchaseInfo));
+        } catch (Exception e) {
+            LOGGER.error("В процессе сохранение пользователя в БД возникла ошибка: " + e);
+            return ResponseEntity
+                    .badRequest()
+                    .body("В процессе сохранение пользователя в БД возникла ошибка");
+        }
 
-        LOGGER.info("Документ успешно обработан и данные занесены а базу");
+        LOGGER.info("Документ успешно обработан и данные занесены в базу");
         return ResponseEntity
                 .ok()
                 .build();

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <id>3</id>
+    <name>Важный</name>
+    <lastname>Девелопер</lastname>
+    <age>33</age>
+    <purchase>
+        <id>1</id>
+        <name>Телевизор</name>
+    </purchase>
+    <purchase>
+        <id>2</id>
+        <name>Смартфон</name>
+    </purchase>
+    <amount>200000.00</amount>
+    <count>2</count>
+    <purchase_date>2022-01-28</purchase_date>
+</user>

@@ -9,7 +9,7 @@ VALUES (1, 'Иван', 'Иванов', 25, 4, 1000.00, '2024-01-28');
 INSERT INTO users (id, name, last_name, age, count, amount, purchase_date)
 VALUES (2, 'Тестовый', 'Юзер', 18, 2, 1024450.00, '2024-01-28');
 INSERT INTO users (id, name, last_name, age, count, amount, purchase_date)
-VALUES (3, 'Важный', 'Девелопер', 3, 5, 14340.00, '2023-01-28');
+VALUES (3, 'Важный', 'Девелопер', 33, 5, 14340.00, '2023-01-28');
 INSERT INTO users (id, name, last_name, age, count, amount, purchase_date)
 VALUES (4, 'Дмитрий', 'Иванов', 18, 2, 12220.00, '2023-12-18');
 INSERT INTO users (id, name, last_name, age, count, amount, purchase_date)

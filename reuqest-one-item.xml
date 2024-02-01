@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <id>1</id>
+    <name>Иван</name>
+    <lastname>Иванов</lastname>
+    <age>25</age>
+    <purchase>
+        <id>1</id>
+        <name>Телевизор</name>
+    </purchase>
+    <amount>22400.00</amount>
+    <count>1</count>
+    <purchase_date>2022-01-28</purchase_date>
+</user>

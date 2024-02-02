@@ -2,7 +2,7 @@ FROM maven:3.9-eclipse-temurin-11-focal as builder
 
 WORKDIR /app
 
-COPY src/main/docker .
+COPY . .
 
 RUN mvn package && ls -lah
 
